@@ -26,6 +26,7 @@ public class ConnectorUtil {
      */
     public static String getBaseUrl(String urlText){
         try {
+						if (urlText.startsWith("/")) return "";
             URL url = new URL(urlText);
             return new URL(url.getProtocol(), url.getHost(), url.getPort(), "").toString();
         } catch (MalformedURLException e) {
